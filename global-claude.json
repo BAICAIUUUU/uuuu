@@ -1,0 +1,48 @@
+{
+  "numStartups": 2,
+  "installMethod": "global",
+  "tipsHistory": {
+    "new-user-warmup": 1,
+    "plan-mode-for-complex-tasks": 1,
+    "color-when-multi-clauding": 1,
+    "memory-command": 1,
+    "theme-command": 1,
+    "agents-view-multiclauding": 2
+  },
+  "opusProMigrationComplete": true,
+  "sonnet1m45MigrationComplete": true,
+  "seenNotifications": {},
+  "migrationVersion": 13,
+  "firstStartTime": "2026-06-12T04:15:56.507Z",
+  "userID": "6ded5be8507b18ab467470cb76970900e810b5cbf4e9a55979f1d3efd0c182ea",
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "2.1.138",
+  "lastReleaseNotesSeen": "2.1.218",
+  "projects": {
+    "C:/Users/yuxin.zhang": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 2,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [],
+      "lastGracefulShutdown": false,
+      "lastHintSessionId": "ddf3dd5e-b9f8-414e-a362-fd6360bad8a8",
+      "lastSessionFirstPrompt": "现在的IO SHJDSHIZHSME",
+      "lastSessionModified": 1784793255821,
+      "lastVersionBase": "2.1.218"
+    }
+  },
+  "officialMarketplaceAutoInstallAttempted": true,
+  "officialMarketplaceAutoInstalled": true,
+  "ideHintShownCount": 1,
+  "machineID": "7a765499b65914ebd371bcf30bfab232cebd7dc58168ed2a06daa3b9856459a5",
+  "changelogLastFetched": 1784876818521,
+  "tipLifetimeShownCounts": {
+    "agents-view-multiclauding": 1
+  }
+}

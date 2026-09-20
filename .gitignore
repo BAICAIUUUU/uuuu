@@ -1,0 +1,23 @@
+# ===== 凭证与敏感配置（绝不提交，脱敏版由 backup.sh 生成）=====
+.credentials.json
+settings.json
+settings - 副本.json
+settings.local.json
+*.local.json
+
+# ===== 运行时/大文件 =====
+claude.exe
+cache/
+session-env/
+sessions/
+telemetry/
+shell-snapshots/
+ide/
+backups/
+file-history/
+history.jsonl
+.last-cleanup
+plugins/marketplaces/
+
+# ===== 会话历史（大，但保留 projects/*/memory/）=====
+projects/**/*.jsonl

@@ -44,5 +44,11 @@
   "changelogLastFetched": 1784876818521,
   "tipLifetimeShownCounts": {
     "agents-view-multiclauding": 1
+  },
+  "skillUsage": {
+    "update-config": {
+      "usageCount": 1,
+      "lastUsedAt": 1789897064297
+    }
   }
 }

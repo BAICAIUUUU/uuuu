@@ -1,7 +1,8 @@
 #!/bin/bash
 # Claude Code 配置备份：生成脱敏副本 -> 提交 -> 推送
-# 用法: bash ~/.claude/backup.sh
+# 用法: bash ~/.claude/backup.sh （也可由 Windows 计划任务调用）
 set -e
+: "${HOME:=$USERPROFILE}"   # 计划任务环境下 HOME 可能未设置
 cd ~/.claude
 
 # 1. 全局配置快照（无凭证，含机器/用户ID，仅存私有仓库）
@@ -24,7 +25,7 @@ with open(os.path.expanduser('~/.claude/settings.sanitized.json'), 'w', encoding
     json.dump(scrub(data), f, indent=2, ensure_ascii=False)
 PYEOF
 
-# 3. 提交并推送
+# 3. 提交并推送（BatchMode+超时，断网/无 key 时直接跳过不挂起）
 git add -A
 git commit -m "backup $(date '+%F %T')" || echo "nothing to commit"
-git push || echo "no remote configured, skip push"
+GIT_SSH_COMMAND="ssh -o ConnectTimeout=15 -o BatchMode=yes" git push || echo "push skipped"

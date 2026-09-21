@@ -18,6 +18,7 @@ file-history/
 history.jsonl
 .last-cleanup
 plugins/marketplaces/
+backup.log
 
 # ===== 会话历史（大，但保留 projects/*/memory/）=====
 projects/**/*.jsonl

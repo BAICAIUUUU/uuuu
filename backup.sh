@@ -1,9 +1,12 @@
 #!/bin/bash
-# Claude Code 配置备份：生成脱敏副本 -> 提交 -> 推送
+# Claude Code 配置备份：生成脱敏副本 -> 提交 -> 推送 -> 写日志
 # 用法: bash ~/.claude/backup.sh （也可由 Windows 计划任务调用）
 set -e
 : "${HOME:=$USERPROFILE}"   # 计划任务环境下 HOME 可能未设置
 cd ~/.claude
+
+LOG=~/.claude/backup.log
+log() { echo "[$(date '+%F %T')] $1" >> "$LOG"; }
 
 # 1. 全局配置快照（无凭证，含机器/用户ID，仅存私有仓库）
 cp ~/.claude.json global-claude.json
@@ -27,5 +30,14 @@ PYEOF
 
 # 3. 提交并推送（BatchMode+超时，断网/无 key 时直接跳过不挂起）
 git add -A
-git commit -m "backup $(date '+%F %T')" || echo "nothing to commit"
-GIT_SSH_COMMAND="ssh -o ConnectTimeout=15 -o BatchMode=yes" git push || echo "push skipped"
+if git commit -m "backup $(date '+%F %T')" > /dev/null; then
+    RESULT="commit $(git rev-parse --short HEAD)"
+else
+    RESULT="nothing to commit"
+fi
+if GIT_SSH_COMMAND="ssh -o ConnectTimeout=15 -o BatchMode=yes" git push > /dev/null 2>&1; then
+    RESULT="$RESULT, push OK"
+else
+    RESULT="$RESULT, push skipped"
+fi
+log "$RESULT"

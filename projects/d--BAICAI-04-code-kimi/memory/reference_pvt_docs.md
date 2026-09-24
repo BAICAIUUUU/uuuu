@@ -11,4 +11,10 @@ Moortec PVT sensor documentation set:
   - `DMS5571a - PVT Controller Series 3plus (Incl. Serial Test Access) Design Specification.pdf` — PVTC-3 design spec (108 pages)
 - Pre-extracted plain text (via pypdf, page markers `===== PAGE n =====`): `D:\BAICAI\02_pdf\tsensor\extracted\*.txt`
 
-**How to apply:** Read the extracted .txt files instead of re-parsing PDFs (Read tool's PDF path is broken on this machine — pdftoppm missing; use pypdf via `pip install pypdf` if re-extraction is needed).
+WANGYOU project docs: `D:\BAICAI\03_qx_project\03_wangyou\`
+- `260619.cs_tsensor_t22ull_datasheet.pdf` — Cyansemi TSMC 22ULL temp sensor (19 pages, remote-sensor capable)
+- `WANGYOU-PVT.docx` / `PVT TEST (1).docx` — project TDR config + test sequence notes
+- `PVT_完整文档.md` / `PVT_完整文档.docx` — consolidated PVT document I compiled 2026-09 (TS4 + t22ull + PVTC-3 + TAM/TDR + wangyou flows)
+- Extracted text + md2docx.py converter: `D:\BAICAI\03_qx_project\03_wangyou\extracted\`
+
+**How to apply:** Read the extracted .txt files instead of re-parsing PDFs (Read tool's PDF path is broken on this machine — pdftoppm missing; use pypdf via `pip install pypdf` if re-extraction is needed). pip installs from pypi hang on this machine — prefer stdlib-only scripts.
